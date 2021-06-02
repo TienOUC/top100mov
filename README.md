@@ -36,7 +36,7 @@ Platform     : macOS-10.16-x86_64-i386-64bit
 - 框架示意图 
 ![](https://tva1.sinaimg.cn/large/008i3skNly1gr3v9m217lj30sw0lrq4w.jpg)
 
-- **原理：**`Spider` 发起 `Request请求`（类封装url）， 经过中间件到达 `Engine` `，Engine` 接收到请求后，发送给 `Scheduler` 调度，`Scheduler` 再交给 `Downloader` 下载，返回 `Response对象`
+- **原理：**`Spider` 发起 `Request请求`（类封装url）， 经过中间件到达 `Engine`，`Engine` 接收到请求后，发送给 `Scheduler` 调度，`Scheduler` 再交给 `Downloader` 下载，返回 `Response对象`
 给 `Spider`，`Spider` 对返回的 `Response对象` 进行解析，解析结果是 `Item` 就抛给 `Pipeline` 储存，是请求就扔给 `Engine` 继续发起请求，重复循环直到所有请求处理完成。
 
 ## 2. 命令
