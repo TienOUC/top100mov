@@ -62,9 +62,19 @@ Available commands:
 
 ### 2.2  局部命令   
 
+创建项目 `scrapy startproject top100mov`
+
 ```shell
-# scrapy genspider [项目名] [域名] 
-(base) ➜  ~ scrapy genspider top100mov bilibili.com  
+(base) ➜ scrapy startproject top100mov         
+New Scrapy project 'top100mov', using template directory '/Users/willtien/opt/anaconda3/lib/python3.8/site-packages/scrapy/templates/project', created in:
+    /Volumes/Github HD/top100mov
+
+You can start your first spider with:
+    cd top100mov
+    scrapy genspider example example.com
+```
+
+```shell
 (base) ➜  ~ cd top100mov && scrapy -h
 Scrapy 2.5.0 - project: top100mov
 
@@ -88,6 +98,9 @@ Available commands:
   version       Print Scrapy version
   view          Open URL in browser, as seen by Scrapy
 ```
+
+使用预定义模版生成一个Spider `scrapy genspider top100mv bilibili.com`，目录 `spiders/top100mv.py`
+
 - 项目目录   
 ```md
 top100mov
@@ -118,6 +131,8 @@ top100mov
 - 定义Item
 
 ```py
+# items.py
+
 import scrapy
 
 class Top100MovItem(scrapy.Item):
@@ -131,6 +146,8 @@ class Top100MovItem(scrapy.Item):
 - 修改Spider文件
 
 ```py
+# top100mv.py
+
 import scrapy
 #导入Item类定义
 from top100mov.items import Top100MovItem
