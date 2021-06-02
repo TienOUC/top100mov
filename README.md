@@ -143,7 +143,15 @@ class Top100MovItem(scrapy.Item):
     score = scrapy.Field()
 ```
 
-- 修改Spider文件
+- 修改seetings.py
+
+```py
+ITEM_PIPELINES = {
+   'top100mov.pipelines.Top100MovPipeline': 300,
+}
+```
+
+- 修改top100mv.py
 
 ```py
 # top100mv.py
